@@ -17,7 +17,7 @@ $rules = array(
   array(
     'role',
     'callback',
-    function ($role) { return $role == 'sith'; },
+    function ($role) { return $role == 'jedi'; },
     'Come to the dark side!'
   )
 );
@@ -32,15 +32,16 @@ print_r(validate($rules, array(
   'password_confirmation' => '123'
 )));
 echo '</pre>';
+
 echo '<pre style="color:green">';
 # apply the rules to passing data
 var_dump(validate($rules, array(
-  'username' => 'noodlehaus',
-  'email' => 'jesus.domingo@gmail.com',
-  'age' => 35,
-  'role' => 'sith',
-  'password' => 'awesome123',
-  'password_confirmation' => 'awesome123'
+  'username' => 'masiar',
+  'email' => 'kontakt@mustachelab.pl',
+  'age' => (date('Y') - 1992),
+  'role' => 'jedi',
+  'password' => 'secretpassword1234',
+  'password_confirmation' => 'secretpassword1234'
 )));
 
 echo '</pre>';
